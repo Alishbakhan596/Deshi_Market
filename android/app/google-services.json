@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "285068335558",
+    "project_id": "ecommerappdeshimarket",
+    "storage_bucket": "ecommerappdeshimarket.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285068335558:android:6029ae65b9ad9f1cd2bac7",
+        "android_client_info": {
+          "package_name": "com.example.e_commerce_fruits_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcDRGs2yZdhdmIgUV1dhyMcNkPrZWHWtA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
