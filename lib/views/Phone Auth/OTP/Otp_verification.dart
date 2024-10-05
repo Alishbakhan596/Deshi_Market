@@ -1,4 +1,6 @@
-import 'package:country_code_picker/country_code_picker.dart';
+import 'dart:developer';
+
+import 'package:e_commerce_fruits_app/views/Home/home_screen.dart';
 import 'package:e_commerce_fruits_app/views/Phone%20Auth/Verification/mobile_verification.dart';
 import 'package:e_commerce_fruits_app/views/SelectLocation/select_location.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,7 +9,7 @@ import 'package:get/get.dart';
 
 class OtpVerification extends StatefulWidget {
   final String verificationId;
-  OtpVerification({required this.verificationId});
+  OtpVerification({super.key, required this.verificationId});
 
   @override
   State<OtpVerification> createState() => _OtpVerificationState();
@@ -15,6 +17,7 @@ class OtpVerification extends StatefulWidget {
 
 class _OtpVerificationState extends State<OtpVerification> {
   final TextEditingController _otpController = TextEditingController();
+  //bool isLoading = false;
 
   Future<void> _submitOTP(BuildContext) async {
     String otp = _otpController.text.trim();
@@ -32,14 +35,6 @@ class _OtpVerificationState extends State<OtpVerification> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: IconButton(
-          onPressed: () {
-            Get.to(MobileVerification());
-          },
-          icon: Icon(Icons.arrow_back_ios),
-        ),
-      ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
@@ -47,6 +42,13 @@ class _OtpVerificationState extends State<OtpVerification> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              IconButton(
+                onPressed: () {
+                  Get.to(MobileVerification());
+                },
+                icon: Icon(Icons.arrow_back_ios),
+              ),
+              SizedBox(height: 15),
               Text(
                 "Enter your 4-digit Code",
                 style: TextStyle(
@@ -54,6 +56,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                     color: Colors.black,
                     fontWeight: FontWeight.w600),
               ),
+              SizedBox(height: 10),
               const Text(
                 "Code",
                 style: TextStyle(fontSize: 18, color: Colors.grey),
@@ -62,11 +65,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                 controller: _otpController,
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
-                  hintText: '',
-                  prefixIcon: CountryCodePicker(
-                    initialSelection: 'PK',
-                    onChanged: (value) {},
-                  ),
+                  hintText: '- - - -',
                 ),
               ),
             ],
@@ -74,8 +73,36 @@ class _OtpVerificationState extends State<OtpVerification> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
+          try {
+            PhoneAuthCredential credential = await PhoneAuthProvider.credential(
+                verificationId: widget.verificationId,
+                smsCode: _otpController.text.toString());
+            FirebaseAuth.instance
+                .signInWithCredential(credential)
+                .then((value) {
+              Get.off(HomeScreen());
+            });
+          } catch (ex) {
+            log(ex.toString());
+          }
+          // // setState(() {
+          // //   isLoading = true;
+          // // });
+          // try {
+          //   final credential = PhoneAuthProvider.credential(
+          //       verificationId: widget.verificationId,
+          //       smsCode: _otpController.text);
+          //   await FirebaseAuth.instance.signInWithCredential(credential);
+          //   Get.offAll(() => SelectLocation());
+          // } catch (e) {
+          //   print(e);
+          // }
+          // // setState(() {
+          // //   isLoading = false;
+          // // });
           _submitOTP(context);
+          Get.off(SelectLocation());
         },
         backgroundColor: Color(0xff53B175),
         child: Icon(

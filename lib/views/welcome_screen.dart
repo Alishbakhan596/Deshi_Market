@@ -21,9 +21,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
-              height: 80,
-            ),
+            SizedBox(height: 100),
             Container(
               margin: EdgeInsets.only(left: 20),
               alignment: Alignment.centerLeft,
@@ -138,7 +136,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Row(
               children: [
                 Padding(padding: EdgeInsets.only(left: 22)),
-                Image.asset("assets/Icons/vector (2).png"),
+                Image.asset("assets/Icons/Vector (2).png"),
                 Padding(padding: EdgeInsets.only(left: 25)),
                 Text(
                   "Secure and Safe",
@@ -146,7 +144,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 30),
             Positioned(
               child: SingleChildScrollView(
                 child: Container(
@@ -157,23 +155,24 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                         topRight: Radius.circular(18)),
                   ),
                   padding: EdgeInsets.all(18),
-                  height: height * 0.3,
+                  height: height * 0.4,
                   width: width,
                   child: Column(
                     children: [
+                      SizedBox(height: 8),
                       Text(
-                        "Welcome  to our Store",
+                        "Welcome to our Store",
                         style: TextStyle(
                             fontSize: 25,
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        "Get your grocery in as fast as one hours",
+                        "Get your grocery in as fast as\none hours",
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 13),
+                        style: TextStyle(color: Colors.white, fontSize: 15),
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 40),
                       SizedBox(
                         height: 60,
                         width: 250,

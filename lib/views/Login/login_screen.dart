@@ -51,103 +51,106 @@ class _LoginScreenState extends State<LoginScreen> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            alignment: Alignment.center,
-            child: Image.asset(
-              "assets/Icons/carrot.png",
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              child: Image.asset(
+                "assets/Icons/carrot.png",
+              ),
             ),
-          ),
-          SizedBox(height: 50),
-          Container(
-            padding: EdgeInsets.only(left: 20),
-            alignment: Alignment.bottomLeft,
-            child: Text(
-              "Loging",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.only(left: 20),
-            alignment: Alignment.bottomLeft,
-            child: Text(
-              "Enter your emails and password",
-              style: TextStyle(fontSize: 15, color: Colors.grey),
-            ),
-          ),
-          SizedBox(height: 40),
-          Container(
-            padding: EdgeInsets.only(left: 20),
-            alignment: Alignment.bottomLeft,
-            child: Text("Email", style: TextStyle(fontSize: 14, color: Grey)),
-          ),
-          CustomTextField(
-            obscureValue: false,
-            controller: emailController,
-          ),
-          SizedBox(height: 20),
-          Container(
-              padding: EdgeInsets.only(left: 20),
+            SizedBox(height: 50),
+            Container(
+              padding: EdgeInsets.only(left: 10),
               alignment: Alignment.bottomLeft,
-              child: Text("Password",
-                  style: TextStyle(fontSize: 14, color: Grey))),
-          CustomTextField(
-            obscureValue: true,
-            controller: passwordController,
-          ),
-          SizedBox(height: 10),
-          const ForgotPassword(),
-          SizedBox(height: 20),
-          Container(
-            padding: EdgeInsets.only(left: 20),
-            child: SizedBox(
-              height: height * 0.08,
-              width: width,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    backgroundColor: Color(0xff53B175),
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15))),
-                child: Text(
-                  "Log In",
-                  style: TextStyle(fontSize: 20),
-                ),
-                onPressed: () {
-                  LoginUsers();
-                  //Get.offAll(() => HomeScreen());
-                },
+              child: Text(
+                "Loging",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
               ),
             ),
-          ),
-          SizedBox(height: 15),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Don't have an account?",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+            Container(
+              padding: EdgeInsets.only(left: 10),
+              alignment: Alignment.bottomLeft,
+              child: Text(
+                "Enter your emails and password",
+                style: TextStyle(fontSize: 15, color: Colors.grey),
+              ),
+            ),
+            SizedBox(height: 40),
+            Container(
+              padding: EdgeInsets.only(left: 10),
+              alignment: Alignment.bottomLeft,
+              child: Text("Email", style: TextStyle(fontSize: 14, color: Grey)),
+            ),
+            CustomTextField(
+              obscureValue: false,
+              controller: emailController,
+            ),
+            SizedBox(height: 20),
+            Container(
+                padding: EdgeInsets.only(left: 10),
+                alignment: Alignment.bottomLeft,
+                child: Text("Password",
+                    style: TextStyle(fontSize: 14, color: Grey))),
+            CustomTextField(
+              obscureValue: true,
+              controller: passwordController,
+            ),
+            SizedBox(height: 10),
+            const ForgotPassword(),
+            SizedBox(height: 20),
+            Container(
+              padding: EdgeInsets.only(left: 10),
+              child: SizedBox(
+                height: height * 0.08,
+                width: width,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: Color(0xff53B175),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15))),
+                  child: Text(
+                    "Log In",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    LoginUsers();
+                    //Get.offAll(() => HomeScreen());
+                  },
                 ),
               ),
-              TextButton(
-                onPressed: () {
-                  Get.offAll(() => SignupScreen());
-                },
-                child: Text(
-                  "Signup",
+            ),
+            SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Don't have an account?",
                   style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff53B175)),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-            ],
-          )
-        ],
+                TextButton(
+                  onPressed: () {
+                    Get.offAll(() => SignupScreen());
+                  },
+                  child: Text(
+                    "Signup",
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff53B175)),
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

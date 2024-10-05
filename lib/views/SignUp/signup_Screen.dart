@@ -1,6 +1,6 @@
 import 'package:e_commerce_fruits_app/services/auth/auth_service.dart';
 import 'package:e_commerce_fruits_app/views/Home/home_screen.dart';
-import 'package:e_commerce_fruits_app/views/SelectLocation/select_location.dart';
+import 'package:e_commerce_fruits_app/views/Login/login_screen.dart';
 import 'package:e_commerce_fruits_app/widgets/custom_text_field.dart';
 import 'package:e_commerce_fruits_app/widgets/snack_bar.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +63,7 @@ class _SignUpScreenState extends State<SignupScreen> {
             ),
             SizedBox(height: 50),
             Container(
-              padding: EdgeInsets.only(left: 20),
+              padding: EdgeInsets.only(left: 21),
               alignment: Alignment.bottomLeft,
               child: Text(
                 "Sign Up",
@@ -71,7 +71,7 @@ class _SignUpScreenState extends State<SignupScreen> {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(left: 20),
+              padding: EdgeInsets.only(left: 10),
               alignment: Alignment.bottomLeft,
               child: Text(
                 "Enter your credentials to continue",
@@ -80,7 +80,7 @@ class _SignUpScreenState extends State<SignupScreen> {
             ),
             SizedBox(height: 40),
             Container(
-              padding: EdgeInsets.only(left: 20),
+              padding: EdgeInsets.only(left: 10),
               alignment: Alignment.bottomLeft,
               child:
                   Text("Username", style: TextStyle(fontSize: 14, color: Grey)),
@@ -91,7 +91,7 @@ class _SignUpScreenState extends State<SignupScreen> {
             ),
             SizedBox(height: 20),
             Container(
-              padding: EdgeInsets.only(left: 20),
+              padding: EdgeInsets.only(left: 10),
               alignment: Alignment.bottomLeft,
               child: Text("Email", style: TextStyle(fontSize: 14, color: Grey)),
             ),
@@ -101,7 +101,7 @@ class _SignUpScreenState extends State<SignupScreen> {
             ),
             SizedBox(height: 20),
             Container(
-                padding: EdgeInsets.only(left: 20),
+                padding: EdgeInsets.only(left: 10),
                 alignment: Alignment.bottomLeft,
                 child: Text("Password",
                     style: TextStyle(fontSize: 14, color: Grey))),
@@ -111,7 +111,7 @@ class _SignUpScreenState extends State<SignupScreen> {
             ),
             SizedBox(height: 20),
             Container(
-              padding: EdgeInsets.only(left: 20),
+              padding: EdgeInsets.only(left: 10),
               child: Column(
                 children: [
                   Row(
@@ -122,7 +122,7 @@ class _SignUpScreenState extends State<SignupScreen> {
                         style: TextStyle(color: Colors.grey),
                       ),
                       Text(
-                        "Terms of Service",
+                        "Terms of",
                         style: TextStyle(color: Color(0xff53B175)),
                       ),
                     ],
@@ -130,6 +130,10 @@ class _SignUpScreenState extends State<SignupScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+                      Text(
+                        "Service ",
+                        style: TextStyle(color: Color(0xff53B175)),
+                      ),
                       Text(
                         "and ",
                         style: TextStyle(color: Colors.grey),
@@ -145,7 +149,7 @@ class _SignUpScreenState extends State<SignupScreen> {
             ),
             SizedBox(height: 20),
             Container(
-              padding: EdgeInsets.only(left: 20),
+              padding: EdgeInsets.only(left: 10),
               child: SizedBox(
                 height: height * 0.08,
                 width: width,
@@ -173,11 +177,11 @@ class _SignUpScreenState extends State<SignupScreen> {
               children: [
                 Text(
                   "Already have an account?",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                 ),
                 TextButton(
                   onPressed: () {
-                    Get.offAll(() => SelectLocation());
+                    Get.offAll(() => LoginScreen());
                   },
                   child: Text(
                     "Signup",

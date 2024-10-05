@@ -1,6 +1,5 @@
-import 'package:country_code_picker/country_code_picker.dart';
 import 'package:e_commerce_fruits_app/views/Phone%20Auth/OTP/Otp_verification.dart';
-import 'package:e_commerce_fruits_app/views/Phone%20Auth/verification/phone_screen.dart';
+import 'package:e_commerce_fruits_app/views/Phone%20Auth/phoneLogin/phone_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,18 +14,18 @@ class MobileVerification extends StatefulWidget {
 class _MobileVerificationState extends State<MobileVerification> {
   final TextEditingController _phoneNumberController = TextEditingController();
 
-  Future<void> _submitPhoneNumber(BuildContext) async {
-    String phonenumber = _phoneNumberController.text.trim();
+  Future<void> _submitPhoneNumber(BuildContext context) async {
+    String phoneNumber = _phoneNumberController.text.trim();
     FirebaseAuth auth = FirebaseAuth.instance;
 
     await auth.verifyPhoneNumber(
-        phoneNumber: phonenumber,
+        phoneNumber: phoneNumber,
         verificationCompleted: (PhoneAuthCredential credential) async {},
         verificationFailed: (FirebaseAuthException e) {
           print(e.message.toString());
         },
         codeSent: (String verificationId, int? resendToken) {
-          Get.offAll(OtpVerification(
+          Get.off(OtpVerification(
             verificationId: verificationId,
           ));
         },
@@ -62,15 +61,15 @@ class _MobileVerificationState extends State<MobileVerification> {
                 "Mobile Number",
                 style: TextStyle(fontSize: 18, color: Colors.grey),
               ),
-              TextFormField(
+              TextField(
                 controller: _phoneNumberController,
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   hintText: '',
-                  prefixIcon: CountryCodePicker(
-                    initialSelection: 'PK',
-                    onChanged: (value) {},
-                  ),
+                  // prefixIcon: CountryCodePicker(
+                  //   initialSelection: 'PK',
+                  //   onChanged: (value) {},
+                  // ),
                 ),
               ),
             ],
@@ -78,7 +77,27 @@ class _MobileVerificationState extends State<MobileVerification> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
+          // await FirebaseAuth.instance.verifyPhoneNumber(
+          //     verificationCompleted: (PhoneAuthCredential credential) {},
+          //     verificationFailed: (FirebaseAuthException ex) {},
+          //     codeSent: (String verificationId, int? resendtoken) {
+          //       Get.off(OtpVerification(verificationId: verificationId));
+          //     },
+          //     codeAutoRetrievalTimeout: (String verificationId) {},
+          //     phoneNumber: _phoneNumberController.text.toString());
+          // await FirebaseAuth.instance.verifyPhoneNumber(
+          //     phoneNumber: _phoneNumberController.text,
+          //     verificationCompleted: (PhoneAuthCredential) {},
+          //     verificationFailed: (error) {
+          //       print(error);
+          //     },
+          //     codeSent: (verificationId, forceResendingToken) {
+          //       Get.off(OtpVerification(
+          //         verificationId: verificationId,
+          //       ));
+          //     },
+          //     codeAutoRetrievalTimeout: (verificationId) {});
           _submitPhoneNumber(context);
         },
         backgroundColor: Color(0xff53B175),

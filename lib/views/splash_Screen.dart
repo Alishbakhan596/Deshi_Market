@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Green,
       body: Column(
         children: [
-          SizedBox(height: 150),
+          SizedBox(height: 190),
           Center(
             child: Container(
               alignment: Alignment.center,
