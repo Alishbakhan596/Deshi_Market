@@ -17,19 +17,39 @@ class _MobileVerificationState extends State<MobileVerification> {
   Future<void> _submitPhoneNumber(BuildContext context) async {
     String phoneNumber = _phoneNumberController.text.trim();
     FirebaseAuth auth = FirebaseAuth.instance;
-
-    await auth.verifyPhoneNumber(
-        phoneNumber: phoneNumber,
-        verificationCompleted: (PhoneAuthCredential credential) async {},
-        verificationFailed: (FirebaseAuthException e) {
-          print(e.message.toString());
-        },
-        codeSent: (String verificationId, int? resendToken) {
-          Get.off(OtpVerification(
-            verificationId: verificationId,
-          ));
-        },
-        codeAutoRetrievalTimeout: (String verificationID) {});
+    print("phone Number $phoneNumber");
+    try {
+      await auth.verifyPhoneNumber(
+          phoneNumber: "+$phoneNumber",
+          // phoneNumber: "+923470216835",
+          verificationCompleted: (PhoneAuthCredential credential) async {},
+          verificationFailed: (FirebaseAuthException e) {
+            print(e.message.toString());
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('${e.message.toString()}'),
+              ),
+            );
+          },
+          codeSent: (String verificationId, int? resendToken) {
+            Get.off(OtpVerification(
+              verificationId: verificationId,
+            ));
+          },
+          codeAutoRetrievalTimeout: (String verificationID) {});
+    } on FirebaseAuthException catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('${e.code}'),
+        ),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('$e'),
+        ),
+      );
+    }
   }
 
   @override
