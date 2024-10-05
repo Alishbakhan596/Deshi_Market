@@ -55,15 +55,16 @@ class _SignUpScreenState extends State<SignupScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 50),
             Container(
               alignment: Alignment.center,
               child: Image.asset(
                 "assets/Icons/carrot.png",
               ),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 30),
             Container(
-              padding: EdgeInsets.only(left: 21),
+              padding: EdgeInsets.only(left: 10),
               alignment: Alignment.bottomLeft,
               child: Text(
                 "Sign Up",
@@ -78,7 +79,7 @@ class _SignUpScreenState extends State<SignupScreen> {
                 style: TextStyle(fontSize: 15, color: Colors.grey),
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(height: 30),
             Container(
               padding: EdgeInsets.only(left: 10),
               alignment: Alignment.bottomLeft,
@@ -184,7 +185,7 @@ class _SignUpScreenState extends State<SignupScreen> {
                     Get.offAll(() => LoginScreen());
                   },
                   child: Text(
-                    "Signup",
+                    "Sign In",
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,

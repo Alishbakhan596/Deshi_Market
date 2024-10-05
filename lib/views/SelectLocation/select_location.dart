@@ -1,4 +1,4 @@
-import 'package:e_commerce_fruits_app/views/Login/login_screen.dart';
+import 'package:e_commerce_fruits_app/views/Home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -123,7 +123,8 @@ class _SelectLocationState extends State<SelectLocation> {
                         style: TextStyle(fontSize: 20),
                       ),
                       onPressed: () {
-                        Get.off(LoginScreen());
+                        Get.off(HomeScreen());
+                        // Get.off(LoginScreen());
                       }),
                 ),
               ),

@@ -1,9 +1,10 @@
 import 'package:country_code_picker/country_code_picker.dart';
-import 'package:e_commerce_fruits_app/views/Phone%20Auth/Verification/mobile_verification.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:styled_divider/styled_divider.dart';
+
+import '../Verification/mobile_verification.dart';
 
 class PhoneScreen extends StatefulWidget {
   const PhoneScreen({super.key});

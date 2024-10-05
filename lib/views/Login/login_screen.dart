@@ -54,6 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 50),
             Container(
               alignment: Alignment.center,
               child: Image.asset(

@@ -17,19 +17,39 @@ class _MobileVerificationState extends State<MobileVerification> {
   Future<void> _submitPhoneNumber(BuildContext context) async {
     String phoneNumber = _phoneNumberController.text.trim();
     FirebaseAuth auth = FirebaseAuth.instance;
-
-    await auth.verifyPhoneNumber(
-        phoneNumber: phoneNumber,
-        verificationCompleted: (PhoneAuthCredential credential) async {},
-        verificationFailed: (FirebaseAuthException e) {
-          print(e.message.toString());
-        },
-        codeSent: (String verificationId, int? resendToken) {
-          Get.off(OtpVerification(
-            verificationId: verificationId,
-          ));
-        },
-        codeAutoRetrievalTimeout: (String verificationID) {});
+    print("phone Number $phoneNumber");
+    try {
+      await auth.verifyPhoneNumber(
+          phoneNumber: "+$phoneNumber",
+          // phoneNumber: "+923470216835",
+          verificationCompleted: (PhoneAuthCredential credential) async {},
+          verificationFailed: (FirebaseAuthException e) {
+            print(e.message.toString());
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('${e.message.toString()}'),
+              ),
+            );
+          },
+          codeSent: (String verificationId, int? resendToken) {
+            Get.off(OtpVerification(
+              verificationId: verificationId,
+            ));
+          },
+          codeAutoRetrievalTimeout: (String verificationID) {});
+    } on FirebaseAuthException catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('${e.code}'),
+        ),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('$e'),
+        ),
+      );
+    }
   }
 
   @override
@@ -66,10 +86,6 @@ class _MobileVerificationState extends State<MobileVerification> {
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   hintText: '',
-                  // prefixIcon: CountryCodePicker(
-                  //   initialSelection: 'PK',
-                  //   onChanged: (value) {},
-                  // ),
                 ),
               ),
             ],
@@ -78,26 +94,6 @@ class _MobileVerificationState extends State<MobileVerification> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          // await FirebaseAuth.instance.verifyPhoneNumber(
-          //     verificationCompleted: (PhoneAuthCredential credential) {},
-          //     verificationFailed: (FirebaseAuthException ex) {},
-          //     codeSent: (String verificationId, int? resendtoken) {
-          //       Get.off(OtpVerification(verificationId: verificationId));
-          //     },
-          //     codeAutoRetrievalTimeout: (String verificationId) {},
-          //     phoneNumber: _phoneNumberController.text.toString());
-          // await FirebaseAuth.instance.verifyPhoneNumber(
-          //     phoneNumber: _phoneNumberController.text,
-          //     verificationCompleted: (PhoneAuthCredential) {},
-          //     verificationFailed: (error) {
-          //       print(error);
-          //     },
-          //     codeSent: (verificationId, forceResendingToken) {
-          //       Get.off(OtpVerification(
-          //         verificationId: verificationId,
-          //       ));
-          //     },
-          //     codeAutoRetrievalTimeout: (verificationId) {});
           _submitPhoneNumber(context);
         },
         backgroundColor: Color(0xff53B175),

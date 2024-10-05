@@ -86,21 +86,7 @@ class _OtpVerificationState extends State<OtpVerification> {
           } catch (ex) {
             log(ex.toString());
           }
-          // // setState(() {
-          // //   isLoading = true;
-          // // });
-          // try {
-          //   final credential = PhoneAuthProvider.credential(
-          //       verificationId: widget.verificationId,
-          //       smsCode: _otpController.text);
-          //   await FirebaseAuth.instance.signInWithCredential(credential);
-          //   Get.offAll(() => SelectLocation());
-          // } catch (e) {
-          //   print(e);
-          // }
-          // // setState(() {
-          // //   isLoading = false;
-          // // });
+
           _submitOTP(context);
           Get.off(SelectLocation());
         },
