@@ -5,44 +5,44 @@ class FavouriteItem with ChangeNotifier {
   final List<ItemModel> _itemListOne = [
     ItemModel(
         productId: '1',
-        productName: 'Red Apple',
-        productDescription: '1kg, Price',
-        productThumbNail: 'assets/Fruits/pngfuel 1.png',
+        productName: 'Organic Bananas',
+        productDescription: '7pcs, Price',
+        productThumbNail: 'assets/Fruits/banana.png',
         unitPrice: '\$4.99'),
     ItemModel(
         productId: '2',
-        productName: 'Dry Fruits',
-        productDescription: '250gm, Price',
-        productThumbNail: 'assets/Fruits/driFruits.png',
-        unitPrice: '\$3.99'),
+        productName: 'Red Apple',
+        productDescription: '1kg, Price',
+        productThumbNail: 'assets/Fruits/pengfuel 1.png',
+        unitPrice: '\$4.99'),
   ];
   final List<ItemModel> _itemListTwo = [
     ItemModel(
         productId: '3',
         productName: 'Bell Pepper Red',
-        productDescription: '2kg, Price',
+        productDescription: '1kg, Price',
         productThumbNail: 'assets/Fruits/Shemla.png',
-        unitPrice: '\$5.99'),
+        unitPrice: '\$4.99'),
     ItemModel(
         productId: '4',
         productName: 'Ginger',
-        productDescription: '500gm, Price',
+        productDescription: '250gm, Price',
         productThumbNail: 'assets/Fruits/pngfuel 3.png',
-        unitPrice: '\$6.99'),
+        unitPrice: '\$4.99'),
   ];
   final List<ItemModel> _itemListThree = [
     ItemModel(
         productId: '5',
         productName: 'Beef Bone',
-        productDescription: '2kg, Price',
+        productDescription: '1kg, Price',
         productThumbNail: 'assets/Fruits/pngfuel 4.png',
-        unitPrice: '\$7.99'),
+        unitPrice: '\$4.99'),
     ItemModel(
         productId: '6',
         productName: 'Broiler Chicken',
         productDescription: '1kg, Price',
         productThumbNail: 'assets/Fruits/pngfuel 5.png',
-        unitPrice: '\$8.99'),
+        unitPrice: '\$4.99'),
   ];
   final List<String> _fruitsList = [
     'Apple',

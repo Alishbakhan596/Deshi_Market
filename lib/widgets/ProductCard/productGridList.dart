@@ -6,34 +6,34 @@ import 'package:flutter/material.dart';
 class Productgridlist extends StatelessWidget {
   final List<CategoryModel> categories = [
     CategoryModel(
-      imageAsset: 'assets/images/f1.png',
+      imageAsset: 'assets/images/veg.png',
       color: const Color(0xff53b175).withOpacity(0.1),
       borderColor: const Color(0xff53b175).withOpacity(0.7),
       text: 'Fresh Fruits\n& Vegetables',
     ),
     CategoryModel(
-        imageAsset: 'assets/images/f2.png',
+        imageAsset: 'assets/images/oils.png',
         color: const Color(0xfff8a44c1a).withOpacity(0.1),
         borderColor: const Color(0xfff8a44c1a).withOpacity(0.7),
         text: 'Cooking Oil\n& Ghee'),
     CategoryModel(
-        imageAsset: 'assets/images/f3.png',
+        imageAsset: 'assets/images/meat.png',
         color: const Color(0xffF7A593).withOpacity(0.25),
         borderColor: const Color(0xffF7A593),
         text: 'Meet & Fish'),
     CategoryModel(
-        imageAsset: 'assets/images/f4.png',
+        imageAsset: 'assets/images/bakery.png',
         color: const Color(0xffD3B0E0).withOpacity(0.1),
         borderColor: const Color(0xffD3B0E0),
         text: 'Bakery & Snacks'),
     CategoryModel(
-        imageAsset: 'assets/images/f5.png',
+        imageAsset: 'assets/images/mlk.png',
         color: const Color(0xffFDE598).withOpacity(0.25),
         borderColor: const Color(0xffFDE598),
         text: 'Dairy & Eggs'),
     CategoryModel(
         screen: const BeverageScreen(),
-        imageAsset: 'assets/images/f6.png',
+        imageAsset: 'assets/images/beve.png',
         color: const Color(0xffB7DFF5).withOpacity(0.25),
         borderColor: const Color(0xffB7DFF5),
         text: 'Beverages'),

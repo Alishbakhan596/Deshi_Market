@@ -5,17 +5,17 @@ import 'package:flutter/material.dart';
 class BeverageGridList extends StatelessWidget {
   final List<BeveragesModel> beverage = [
     BeveragesModel(
-        'assets/images/c1.png', 'Diet Coke', '355ml, Price', '\$1.99'),
+        'assets/Images/cd1.png', 'Diet Coke', '355ml, Price', '\$1.99'),
     BeveragesModel(
-        'assets/images/c2.png', 'Sprite Can', '325ml, Price', '\$1.99'),
+        'assets/Images/cd2.png', 'Sprite Can', '325ml, Price', '\$1.50'),
     BeveragesModel(
-        'assets/images/c3.png', 'Apple & Grape Juice', '2L, Price', '\$1.76'),
+        'assets/Images/j1.png', 'Apple & Grape Juice', '2L, Price', '\$1.66'),
     BeveragesModel(
-        'assets/images/c4.png', 'Orenge Juice', '2L, Price', '\$1.99'),
+        'assets/Images/j2.png', 'Orenge Juice', '2L, Price', '\$1.79'),
     BeveragesModel(
-        'assets/images/c5.png', 'Coca Cola Can', '325ml, Price', '\$1.09'),
+        'assets/Images/cd3.png', 'Coca Cola Can', '325ml, Price', '\$2.99'),
     BeveragesModel(
-        'assets/images/c6.png', 'Pepsi Can', '330ml, Price', '\$1.97'),
+        'assets/Images/cd4.png', 'Pepsi Can', '330ml, Price', '\$1.97'),
   ];
   BeverageGridList({super.key});
 
