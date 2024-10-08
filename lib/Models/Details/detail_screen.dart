@@ -24,7 +24,7 @@ class DetailScreenModel extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     // print('OK GO');
     return Scaffold(
-        backgroundColor: Colors.white,
+        // backgroundColor: Colors.white,
         appBar: AppBar(
           // Remove any default shadow color
           backgroundColor: Colors.white,
@@ -41,7 +41,7 @@ class DetailScreenModel extends StatelessWidget {
                             right: 0,
                             child: CircleAvatar(
                               radius: 8,
-                              backgroundColor: Green,
+                              backgroundColor: Colors.red,
                               child: Text(
                                   value.selectedFavourites.length.toString(),
                                   style: const TextStyle(
@@ -67,7 +67,7 @@ class DetailScreenModel extends StatelessWidget {
                 children: [
                   /// Fix for Expanded widget usage
                   Container(
-                    height: height * 0.35,
+                    height: 250, // height * 0.37,
                     width: width,
                     decoration: BoxDecoration(
                         color: Colors.grey.withOpacity(0.2),
@@ -76,7 +76,7 @@ class DetailScreenModel extends StatelessWidget {
                             bottomLeft: Radius.circular(20),
                             bottomRight: Radius.circular(20)),
                         image: DecorationImage(
-                            image: AssetImage(product.productThumbNail),
+                            image: AssetImage(product.images),
                             fit: BoxFit.cover)), // Adjust height accordingly
                   ),
                   Container(
@@ -112,7 +112,7 @@ class DetailScreenModel extends StatelessWidget {
                                 ),
                                 color:
                                     value.selectedFavourites.contains(product)
-                                        ? Green
+                                        ? Colors.red
                                         : Colors.black,
                               ),
                             ]),
@@ -177,15 +177,17 @@ class DetailScreenModel extends StatelessWidget {
                         SizedBox(height: height * 0.02),
                         const Divider(),
                         SizedBox(height: height * 0.02),
-                        const Row(
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
+                            const Text(
                               "Nutrition's",
                               style: TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold),
                             ),
-                            Icon(Icons.keyboard_arrow_right_outlined)
+                            SizedBox(width: 85),
+                            Text("100gm"),
+                            const Icon(Icons.keyboard_arrow_right_outlined)
                           ],
                         ),
                         SizedBox(height: height * 0.02),

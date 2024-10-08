@@ -13,3 +13,15 @@ class CategoryModel {
       required this.borderColor,
       required this.text});
 }
+
+class Category {
+  final String imageAsset;
+  final Color color;
+  final Color borderColor;
+  final String text;
+  Category(
+      {required this.imageAsset,
+      required this.color,
+      required this.borderColor,
+      required this.text});
+}

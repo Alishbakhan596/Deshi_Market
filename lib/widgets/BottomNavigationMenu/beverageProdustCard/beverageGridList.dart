@@ -25,18 +25,18 @@ class BeverageGridList extends StatelessWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, mainAxisSpacing: 15.0, crossAxisSpacing: 13,
-          childAspectRatio: 0.68, // Adjust the aspect ratio (width / height)
+          crossAxisCount: 2,
+          mainAxisSpacing: 15.0,
+          crossAxisSpacing: 13,
+          childAspectRatio: 0.68,
         ),
         itemBuilder: (context, index) {
-          // Ensure you're not accessing an out-of-bounds index
           if (index < beverage.length) {
             return Beveragecard(
               beverage: beverage[index],
             );
           } else {
-            return const SizedBox
-                .shrink(); // Return an empty widget if index is out of bounds
+            return const SizedBox.shrink();
           }
         });
   }

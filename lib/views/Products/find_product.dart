@@ -15,9 +15,7 @@ class FindProductsScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               horizontal: width * 0.05, vertical: height * 0.06),
           child: Column(
-            mainAxisSize:
-                MainAxisSize.min, // <--- Add this to shrink-wrap the Column
-
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
@@ -25,12 +23,10 @@ class FindProductsScreen extends StatelessWidget {
                 children: [
                   Text('Find Products',
                       style: TextStyle(
-                          fontSize: width * 0.05, fontWeight: FontWeight.w700))
+                          fontSize: width * 0.05, fontWeight: FontWeight.w800))
                 ],
               ),
               SizedBox(height: height * 0.034),
-
-              /// Search Store
               TextFormField(
                 decoration: InputDecoration(
                     hintText: 'Search Store',
@@ -50,7 +46,7 @@ class FindProductsScreen extends StatelessWidget {
                           color: Colors.grey.withOpacity(0.2),
                         ))),
               ),
-
+              SizedBox(height: 10),
               SizedBox(height: height * 0.9, child: Productgridlist())
             ],
           ),

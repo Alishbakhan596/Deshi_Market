@@ -4,6 +4,8 @@ import 'package:e_commerce_fruits_app/widgets/CustomWidgetGridViewCard/grid_view
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../widgets/ProductCard/categoryModel.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -39,37 +41,23 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(
             height: 30,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              decoration: BoxDecoration(
-                  color: Colors.grey.shade100,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Colors.black.withOpacity(0.5),
-                        blurRadius: 10,
-                        spreadRadius: 2,
-                        offset: Offset(0, 3))
-                  ]),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 50,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15),
-                      child: TextFormField(
-                        decoration: InputDecoration(
-                          hintText: "Search Store",
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Icon(Icons.search, color: Green),
-                ],
+          TextFormField(
+            decoration: InputDecoration(
+              hintText: 'Search Store',
+              hintStyle: TextStyle(color: Colors.black.withOpacity(0.4)),
+              filled: true,
+              fillColor: Colors.grey.withOpacity(0.2),
+              suffixIcon: Icon(Icons.search, size: 28, color: Green),
+              focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(16),
+                  borderSide: BorderSide(
+                    color: Colors.grey.withOpacity(0.2),
+                  )),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(16),
+                borderSide: BorderSide(
+                  color: Colors.grey.withOpacity(0.2),
+                ),
               ),
             ),
           ),
@@ -151,10 +139,55 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+          SizedBox(height: 20),
+          Product(),
           FruitsListGridWidget(products: provider.itemListThree),
           SizedBox(height: height * 0.2),
+          // BottomNavigationMenu(),
         ]),
       ),
     ));
+  }
+}
+
+class Product extends StatelessWidget {
+  final List<Category> categories = [
+    Category(
+      imageAsset: 'assets/Fruits/pulses.png',
+      color: const Color(0xffFDE598).withOpacity(0.25),
+      borderColor: const Color(0xffFDE598),
+      text: 'Pulses',
+    ),
+    Category(
+        imageAsset: 'assets/Fruits/rice.png',
+        color: const Color(0xffB7DFF5).withOpacity(0.25),
+        borderColor: const Color(0xffB7DFF5),
+        text: 'Rice'),
+  ];
+  Product({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, mainAxisSpacing: 15.0, crossAxisSpacing: 13,
+          childAspectRatio: 0.8, // Adjust the aspect ratio (width / height)
+        ),
+        itemBuilder: (context, index) {
+          // Ensure you're not accessing an out-of-bounds index
+          // if (index < categories.length) {
+          //   return Productgridcard(
+          //     categorymodel: categories[index],
+          //     // onTap: () => Get.to(() => const BeverageScreen()),
+          //   );
+          // } else {
+          //   return const SizedBox
+          //       .shrink(); // Return an empty widget if index is out of bounds
+          // }
+        });
   }
 }

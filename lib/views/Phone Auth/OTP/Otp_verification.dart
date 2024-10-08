@@ -65,7 +65,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                 controller: _otpController,
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
-                  hintText: '- - - -',
+                  hintText: '- - - - - -',
                 ),
               ),
             ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'categoryModel.dart';
 
@@ -18,8 +19,7 @@ class Productgridcard extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return InkWell(
         onTap: () {
-          // Navigator.push(context,
-          //     MaterialPageRoute(builder: (context) => categorymodel.screen));
+          Get.off(categorymodel.screen);
         },
         child: Container(
           padding: EdgeInsets.only(top: height * 0.03, left: width * 0.03),

@@ -4,14 +4,14 @@ class ItemModel {
   final String productName;
   final String productDescription;
   final String unitPrice;
-  final String productThumbNail;
+  final String images;
   final String? productId;
 
   ItemModel({
     required this.productName,
     required this.productDescription,
     required this.unitPrice,
-    required this.productThumbNail,
+    required this.images,
     this.productId,
   });
 
@@ -21,7 +21,7 @@ class ItemModel {
       productName: data['name'] ?? '',
       productDescription: data['description'] ?? '',
       unitPrice: data['price']?.toString() ?? '',
-      productThumbNail: data['image'] ?? '',
+      images: data['image'] ?? '',
     );
   }
 }

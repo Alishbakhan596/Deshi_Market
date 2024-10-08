@@ -11,7 +11,7 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final provider = Provider.of<FavouriteItem>(context ,listen: false);
+    //final provider = Provider.of<FavouriteItem>(context, listen: false);
     // final theme = Theme.of(context);
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
@@ -46,7 +46,7 @@ class CartScreen extends StatelessWidget {
                                   right: 0,
                                   child: CircleAvatar(
                                     radius: 8,
-                                    backgroundColor: Green,
+                                    backgroundColor: Colors.red,
                                     child: Text(
                                         value.selectedFavourites.length
                                             .toString(),
@@ -85,7 +85,7 @@ class CartScreen extends StatelessWidget {
                   child: SizedBox(
                     child: ElevatedButton(
                         onPressed: () {
-                          // StripeServices.instance.makePayment();
+                          //  StripeServices.instance.makePayment();
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Green,

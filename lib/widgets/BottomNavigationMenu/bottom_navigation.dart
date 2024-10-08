@@ -1,4 +1,5 @@
 import 'package:e_commerce_fruits_app/Utils/constants/colors.dart';
+import 'package:e_commerce_fruits_app/views/Account/account_screen.dart';
 import 'package:e_commerce_fruits_app/views/CartScreen/cart_screen.dart';
 import 'package:e_commerce_fruits_app/views/Home/home_screen.dart';
 import 'package:e_commerce_fruits_app/views/Products/find_product.dart';
@@ -7,6 +8,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:provider/provider.dart';
 
 import '../../services/Provider/provider_state.dart';
+import '../../views/Favourites/fvrt_screen.dart';
 
 class BottomNavigationMenu extends StatefulWidget {
   const BottomNavigationMenu({super.key});
@@ -22,8 +24,8 @@ class _MyAppState extends State<BottomNavigationMenu> {
     const HomeScreen(),
     const FindProductsScreen(),
     const CartScreen(),
-    Container(color: Colors.purple),
-    Container(color: Colors.green),
+    const FavouriteScreen(),
+    const AccountScreen(),
   ];
 
   void onTabTapped(int index) {
@@ -40,9 +42,7 @@ class _MyAppState extends State<BottomNavigationMenu> {
           builder: (context, value, child) => SizedBox(
             height: 85,
             child: BottomNavigationBar(
-
-                /// esko jab ap remove kro ge to icons oper nichy hona shore ho jai gy
-                type: BottomNavigationBarType.fixed, // Add this line
+                type: BottomNavigationBarType.fixed,
                 selectedItemColor: Green,
                 unselectedItemColor: Colors.grey,
                 iconSize: 30,
@@ -55,10 +55,10 @@ class _MyAppState extends State<BottomNavigationMenu> {
                 onTap: onTabTapped, // new
                 currentIndex: _currentIndex, // new
                 items: [
-                  /// Home
+                  // Home
                   const BottomNavigationBarItem(
                       icon: Icon(Iconsax.shop),
-                      activeIcon: Icon(Iconsax.shop_add5),
+                      activeIcon: Icon(Iconsax.shop),
                       label: 'Shop'),
 
                   /// Notification
@@ -69,13 +69,13 @@ class _MyAppState extends State<BottomNavigationMenu> {
 
                   /// Add to cart
                   BottomNavigationBarItem(
-                    activeIcon: const Icon(Icons.shopping_bag, size: 30),
+                    activeIcon: const Icon(Icons.shopping_cart, size: 30),
                     icon: value.selectedFavourites.isEmpty
-                        ? const Icon(Icons.shopping_bag_outlined, size: 30)
+                        ? const Icon(Icons.shopping_cart_outlined, size: 30)
                         : Stack(
                             clipBehavior: Clip.none,
                             children: [
-                              const Icon(Icons.shopping_bag_outlined,
+                              const Icon(Icons.shopping_cart_outlined,
                                   size: 30), // Fixed Icon size
                               Positioned(
                                 top: -4, // Adjust this to control the position
