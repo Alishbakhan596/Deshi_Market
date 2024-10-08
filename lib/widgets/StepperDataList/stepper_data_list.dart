@@ -1,12 +1,10 @@
 import 'package:another_stepper/dto/stepper_data.dart';
 import 'package:e_commerce_fruits_app/Utils/constants/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 List<StepperData> stepperData = [
-  /// First data
   StepperData(
-      title: StepperText('Order placed',
+      title: StepperText('Order Confirmed',
           textStyle:
               const TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
       subtitle: StepperText('Your order has been placed',
@@ -14,7 +12,6 @@ List<StepperData> stepperData = [
       iconWidget: Container(
         decoration: const BoxDecoration(
           color: Colors.green,
-          // shape: BoxShape.circle
           borderRadius: BorderRadius.all(Radius.circular(30)),
         ),
         child: const Icon(
@@ -24,9 +21,8 @@ List<StepperData> stepperData = [
         ),
       )),
 
-  /// 2nd data
   StepperData(
-      title: StepperText('Preparing',
+      title: StepperText('Prepared',
           textStyle:
               const TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
       subtitle: StepperText('Your order has been prepared'),
@@ -42,7 +38,6 @@ List<StepperData> stepperData = [
         ),
       )),
 
-  /// third  data
   StepperData(
       title: StepperText('On the way',
           textStyle:
@@ -61,7 +56,7 @@ List<StepperData> stepperData = [
 
   /// final  data
   StepperData(
-      title: StepperText('delivered',
+      title: StepperText('delivered ✅',
           textStyle:
               const TextStyle(fontSize: 20, fontWeight: FontWeight.w600)),
       iconWidget: Container(
@@ -74,16 +69,11 @@ List<StepperData> stepperData = [
           children: [
             const Center(
               child: Icon(
-                Icons.history,
+                Icons.history_outlined,
                 color: Colors.green,
                 size: 25,
               ),
             ),
-            Center(
-                child: SpinKitPulse(
-              color: Colors.green.withOpacity(0.7),
-              size: 50,
-            )),
           ],
         ),
       )),

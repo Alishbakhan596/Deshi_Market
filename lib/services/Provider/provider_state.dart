@@ -39,26 +39,10 @@ class FavouriteItem with ChangeNotifier {
         unitPrice: '\$4.99'),
     ItemModel(
         productId: '6',
-        productName: 'Broiler Chicken',
+        productName: 'Boiler Chicken',
         productDescription: '1kg, Price',
         images: 'assets/Fruits/chicken.png',
         unitPrice: '\$4.99'),
-  ];
-  final List<String> _fruitsList = [
-    'Apple',
-    'Banana',
-    'Mango',
-    'Peach',
-    'Melon',
-    'Watermelon'
-  ];
-  final List<String> _priceList = [
-    'Rs: 20',
-    'Rs: 40',
-    'Rs: 65',
-    'Rs: 80',
-    'Rs: 90',
-    'Rs: 120'
   ];
 
   final Map<String, int> _itemQuantities = {};
@@ -66,14 +50,7 @@ class FavouriteItem with ChangeNotifier {
   List<ItemModel> get itemListOne => _itemListOne;
   List<ItemModel> get itemListTwo => _itemListTwo;
   List<ItemModel> get itemListThree => _itemListThree;
-  List<String> get fruitsList => _fruitsList;
-  List<String> get priceList => _priceList;
   Map<String, int> get itemQuantities => _itemQuantities;
-
-  void addFruit(String fruit) {
-    _fruitsList.add(fruit);
-    notifyListeners();
-  }
 
   final List<ItemModel> _selectedFavourites = [];
 

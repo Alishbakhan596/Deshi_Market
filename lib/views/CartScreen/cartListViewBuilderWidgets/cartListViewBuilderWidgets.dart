@@ -50,7 +50,7 @@ class CartListViewBuilderWidgets extends StatelessWidget {
                 final item = value.selectedFavourites[index];
                 return Padding(
                   padding: EdgeInsets.symmetric(
-                    horizontal: width * 0.03,
+                    horizontal: width * 0.1,
                   ),
                   child: Column(
                     children: [
@@ -61,7 +61,7 @@ class CartListViewBuilderWidgets extends StatelessWidget {
                           Row(
                             children: [
                               Image(image: AssetImage(item.images)),
-                              SizedBox(width: width * 0.05),
+                              SizedBox(width: width * 0.03),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -76,7 +76,7 @@ class CartListViewBuilderWidgets extends StatelessWidget {
                                       Text(item.productDescription,
                                           style: TextStyle(
                                               fontSize: 16, color: Grey)),
-                                      SizedBox(height: height * 0.02),
+                                      SizedBox(height: height * 0.1),
                                       Row(
                                         children: [
                                           CountingIcons(

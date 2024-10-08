@@ -11,7 +11,7 @@ class BeverageGridList extends StatelessWidget {
     BeveragesModel(
         'assets/Images/j1.png', 'Apple & Grape Juice', '2L, Price', '\$1.66'),
     BeveragesModel(
-        'assets/Images/j2.png', 'Orenge Juice', '2L, Price', '\$1.79'),
+        'assets/Images/j2.png', 'Orange Juice', '2L, Price', '\$1.79'),
     BeveragesModel(
         'assets/Images/cd3.png', 'Coca Cola Can', '325ml, Price', '\$2.99'),
     BeveragesModel(

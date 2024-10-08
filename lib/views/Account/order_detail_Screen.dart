@@ -27,11 +27,6 @@ class OrderDetailScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: width * 0.05),
           child: Column(
             children: [
-              // Center(
-              //     child: Lottie.asset(
-              //         'assets/Animation/TrackOrderAnimation.json',
-              //         repeat: true,
-              //         height: height * 0.37)),
               const Text(
                   'Please check your order status to get the item delivered to your home'),
 

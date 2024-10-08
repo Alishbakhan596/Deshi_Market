@@ -1,11 +1,11 @@
-import 'package:e_commerce_fruits_app/Models/beveragesModel/beveragesModel.dart';
+import 'package:e_commerce_fruits_app/Models/ItemsModel/groceryModel.dart';
 import 'package:e_commerce_fruits_app/Utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-class Beveragecard extends StatelessWidget {
-  final BeveragesModel beverage;
+class CategoryCard extends StatelessWidget {
+  final Grocerymodel beverage;
   final onTap;
-  const Beveragecard({super.key, this.onTap, required this.beverage});
+  const CategoryCard({super.key, this.onTap, required this.beverage});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class Beveragecard extends StatelessWidget {
             SizedBox(height: height * 0.01),
             Text(beverage.title,
                 style:
-                    const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                    const TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
             const SizedBox(height: 3),
             Text(beverage.subtitle,
                 style: TextStyle(fontSize: 15, color: Grey)),

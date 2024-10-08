@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 
 import '../../services/Provider/favourite_provider.dart';
 import '../../services/Provider/provider_state.dart';
-import '../../widgets/CartScreeWidgets/countingIcons.dart';
 import '../ItemsModel/fruits_models_list.dart';
 
 class DetailScreenModel extends StatelessWidget {
@@ -19,16 +18,11 @@ class DetailScreenModel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final provider = Provider.of<FavouriteItem>(context, listen: false);
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    // print('OK GO');
     return Scaffold(
-        // backgroundColor: Colors.white,
         appBar: AppBar(
-          // Remove any default shadow color
           backgroundColor: Colors.white,
-
           leading: IconButton(
               onPressed: () => Get.back(),
               icon: const Icon(Icons.arrow_back_ios_new_outlined)),
@@ -65,19 +59,17 @@ class DetailScreenModel extends StatelessWidget {
             builder: (context, value, child) {
               return Column(
                 children: [
-                  /// Fix for Expanded widget usage
                   Container(
                     height: 250, // height * 0.37,
                     width: width,
                     decoration: BoxDecoration(
                         color: Colors.grey.withOpacity(0.2),
-                        // boxShadow: [BoxShadow(blurRadius: 0.2)],
                         borderRadius: const BorderRadius.only(
                             bottomLeft: Radius.circular(20),
                             bottomRight: Radius.circular(20)),
                         image: DecorationImage(
                             image: AssetImage(product.images),
-                            fit: BoxFit.cover)), // Adjust height accordingly
+                            fit: BoxFit.cover)),
                   ),
                   Container(
                     color: Colors.white,
@@ -122,29 +114,16 @@ class DetailScreenModel extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                /// Remove Button
-                                CountingIcons(
-                                  icon: Icons.remove,
-                                  color: Grey,
-                                  onPressed: () {},
-                                ),
+                                Icon(Icons.remove, color: Green),
                                 SizedBox(width: width * 0.03),
-
-                                /// Quantity Display
                                 const Text(
-                                  "1", // Display current quantity
+                                  "1",
                                   style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w600),
                                 ),
                                 SizedBox(width: width * 0.03),
-
-                                /// Add Button
-                                CountingIcons(
-                                  icon: Icons.add,
-                                  color: Green,
-                                  onPressed: () {},
-                                ),
+                                Icon(Icons.add, color: Green),
                                 SizedBox(width: width * 0.20),
                               ],
                             ),
@@ -186,7 +165,7 @@ class DetailScreenModel extends StatelessWidget {
                                   fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(width: 85),
-                            Text("100gm"),
+                            Text("100gr"),
                             const Icon(Icons.keyboard_arrow_right_outlined)
                           ],
                         ),
@@ -205,23 +184,23 @@ class DetailScreenModel extends StatelessWidget {
                               children: [
                                 Icon(
                                   Icons.star,
-                                  color: Colors.amber,
+                                  color: Colors.orange,
                                 ),
                                 Icon(
                                   Icons.star,
-                                  color: Colors.amber,
+                                  color: Colors.orange,
                                 ),
                                 Icon(
                                   Icons.star,
-                                  color: Colors.amber,
+                                  color: Colors.orange,
                                 ),
                                 Icon(
                                   Icons.star,
-                                  color: Colors.amber,
+                                  color: Colors.orange,
                                 ),
                                 Icon(
                                   Icons.star,
-                                  color: Colors.amber,
+                                  color: Colors.orange,
                                 ),
                                 SizedBox(
                                   width: 20,

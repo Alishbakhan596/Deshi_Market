@@ -1,7 +1,6 @@
+import 'package:e_commerce_fruits_app/widgets/ProductCard/categoryModel.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'categoryModel.dart';
 
 class Productgridcard extends StatelessWidget {
   final onTap;

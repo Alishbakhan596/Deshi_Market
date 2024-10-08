@@ -49,7 +49,9 @@ class GridCard extends StatelessWidget {
                   Text(
                     product.productName,
                     style: const TextStyle(
-                        fontSize: 17, fontWeight: FontWeight.bold),
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 3),
 

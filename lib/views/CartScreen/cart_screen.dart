@@ -11,8 +11,6 @@ class CartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //final provider = Provider.of<FavouriteItem>(context, listen: false);
-    // final theme = Theme.of(context);
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -66,8 +64,6 @@ class CartScreen extends StatelessWidget {
             )),
             Divider(color: Colors.grey.withOpacity(0.3)),
             SizedBox(height: height * 0.02),
-
-            /// Selected cart itemList
             const CartListViewBuilderWidgets()
           ],
         ),
@@ -97,7 +93,7 @@ class CartScreen extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white))),
                   ))
-              : const SizedBox(); // Empty widget if no items in cart
+              : const SizedBox();
         },
       ),
     );

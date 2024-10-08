@@ -25,7 +25,6 @@ class FruitsListGridWidget extends StatelessWidget {
           mainAxisSpacing: height * 0.02,
           crossAxisCount: 2),
       itemBuilder: (context, index) {
-        /// Provider are apply in this Widget
         return GridCard(
           product: products[index],
           onPressed: () => Get.to(() => DetailScreenModel(
