@@ -92,7 +92,7 @@ class _SelectLocationState extends State<SelectLocation> {
               DropdownButton<String>(
                   value: selectedArea,
                   isExpanded: true,
-                  hint: Text("Select Your Area"),
+                  hint: Text("Types of your Area"),
                   items: areas.map((String area) {
                     return DropdownMenuItem<String>(
                       child: Text(area),
