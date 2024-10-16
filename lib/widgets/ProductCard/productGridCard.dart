@@ -22,8 +22,8 @@ class Productgridcard extends StatelessWidget {
         },
         child: Container(
           padding: EdgeInsets.only(top: height * 0.03, left: width * 0.03),
-          height: height * 0.4,
-          width: width * 0.43,
+          height: height * 0.3,
+          width: width * 0.15,
           decoration: BoxDecoration(
               color: categorymodel.color,
               borderRadius: BorderRadius.circular(18),
@@ -33,7 +33,7 @@ class Productgridcard extends StatelessWidget {
             children: [
               Image.asset(
                 categorymodel.imageAsset,
-                height: height * 0.1,
+                height: height * 0.2,
               ),
               SizedBox(
                 height: height * 0.03,

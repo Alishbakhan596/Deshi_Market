@@ -1,5 +1,6 @@
 import 'package:e_commerce_fruits_app/Utils/constants/colors.dart';
 import 'package:e_commerce_fruits_app/views/CartScreen/cart_screen.dart';
+import 'package:e_commerce_fruits_app/widgets/BottomNavigationMenu/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
@@ -24,8 +25,10 @@ class DetailScreenModel extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.white,
           leading: IconButton(
-              onPressed: () => Get.back(),
-              icon: const Icon(Icons.arrow_back_ios_new_outlined)),
+              onPressed: () {
+                Get.to(() => const BottomNavigationMenu());
+              },
+              icon: const Icon(Icons.arrow_back_ios)),
           actions: [
             Consumer<FavouriteItem>(
                 builder: (context, value, child) => Stack(
@@ -60,7 +63,7 @@ class DetailScreenModel extends StatelessWidget {
               return Column(
                 children: [
                   Container(
-                    height: 250, // height * 0.37,
+                    height: height * 0.37,
                     width: width,
                     decoration: BoxDecoration(
                         color: Colors.grey.withOpacity(0.2),

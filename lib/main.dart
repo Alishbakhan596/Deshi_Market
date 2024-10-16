@@ -2,7 +2,7 @@ import 'package:e_commerce_fruits_app/firebase_options.dart';
 import 'package:e_commerce_fruits_app/services/Provider/favourite_provider.dart';
 import 'package:e_commerce_fruits_app/services/Provider/provider_state.dart';
 import 'package:e_commerce_fruits_app/services/auth/auth_service.dart';
-import 'package:e_commerce_fruits_app/views/Admin/Dash%20Borad%20Screen.dart';
+import 'package:e_commerce_fruits_app/views/Home/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => AuthService()),
       ],
       child:
-          GetMaterialApp(debugShowCheckedModeBanner: false, home: DashBoard()),
+          GetMaterialApp(debugShowCheckedModeBanner: false, home: HomeScreen()),
     );
   }
 }

@@ -15,8 +15,8 @@ class Beveragecard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: EdgeInsets.only(top: height * 0.03, left: width * 0.03),
-        height: height * 0.35,
-        width: width * 0.45,
+        height: height * 0.15,
+        width: width * 0.25,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(12),

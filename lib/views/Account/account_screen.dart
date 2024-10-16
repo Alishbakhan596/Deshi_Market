@@ -92,7 +92,7 @@ class AccountScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 15)),
+                  Padding(padding: EdgeInsets.only(left: 2)),
                   const Icon(Iconsax.personalcard),
                   Padding(padding: EdgeInsets.only(left: 0.2)),
                   const Text(
@@ -112,7 +112,7 @@ class AccountScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 20)),
+                  Padding(padding: EdgeInsets.only(left: 6)),
                   const Icon(Icons.location_on_outlined),
                   Padding(padding: EdgeInsets.only(left: 24)),
                   const Text(
@@ -252,6 +252,7 @@ class AccountScreen extends StatelessWidget {
                   ],
                 )),
           ),
+          SizedBox(height: 20),
         ]),
       ),
     );

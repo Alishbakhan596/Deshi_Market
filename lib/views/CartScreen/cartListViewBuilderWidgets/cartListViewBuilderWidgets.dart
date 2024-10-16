@@ -61,7 +61,8 @@ class CartListViewBuilderWidgets extends StatelessWidget {
                           Row(
                             children: [
                               Image(image: AssetImage(item.images)),
-                              SizedBox(width: width * 0.03),
+                              SizedBox(width: 5 //width * 0.01
+                                  ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [

@@ -28,10 +28,10 @@ class CategoryCard extends StatelessWidget {
               child: Image(
                   alignment: Alignment.center,
                   image: AssetImage(beverage.image),
-                  height: height * 0.12,
+                  height: height * 0.16,
                   fit: BoxFit.cover),
             ),
-            SizedBox(height: height * 0.01),
+            SizedBox(height: height * 0.03),
             Text(beverage.title,
                 style:
                     const TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),

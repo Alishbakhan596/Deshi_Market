@@ -1,4 +1,7 @@
+import 'package:e_commerce_fruits_app/views/Home/home_screen.dart';
+import 'package:e_commerce_fruits_app/views/Products/find_product.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../widgets/BottomNavigationMenu/beverageProdustCard/beverageGridList.dart';
 
@@ -11,6 +14,11 @@ class BeverageScreen extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Get.to(FindProductsScreen());
+            },
+            icon: Icon(Icons.arrow_back)),
         centerTitle: true,
         title: Text('Beverages',
             style:
@@ -19,7 +27,7 @@ class BeverageScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: width * 0.05, vertical: height * 0.06),
+              horizontal: width * 0.05, vertical: height * 0.03),
           child: Column(
             children: [SizedBox(height: height * 1, child: BeverageGridList())],
           ),

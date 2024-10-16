@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:e_commerce_fruits_app/views/Home/home_screen.dart';
 import 'package:e_commerce_fruits_app/views/Phone%20Auth/Verification/mobile_verification.dart';
 import 'package:e_commerce_fruits_app/views/SelectLocation/select_location.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -81,7 +80,7 @@ class _OtpVerificationState extends State<OtpVerification> {
             FirebaseAuth.instance
                 .signInWithCredential(credential)
                 .then((value) {
-              Get.off(HomeScreen());
+              //  Get.off(HomeScreen());
             });
           } catch (ex) {
             log(ex.toString());

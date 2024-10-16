@@ -23,12 +23,12 @@ class BeverageGridList extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
         shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
+        // physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 15.0,
           crossAxisSpacing: 13,
-          childAspectRatio: 0.68,
+          childAspectRatio: 0.85, //0.68,
         ),
         itemBuilder: (context, index) {
           if (index < beverage.length) {

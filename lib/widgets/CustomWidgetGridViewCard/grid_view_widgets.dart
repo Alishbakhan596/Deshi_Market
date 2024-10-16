@@ -20,9 +20,9 @@ class FruitsListGridWidget extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: products.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          mainAxisExtent: height * 0.3,
+          mainAxisExtent: height * 0.32,
           crossAxisSpacing: width * 0.03,
-          mainAxisSpacing: height * 0.02,
+          mainAxisSpacing: height * 0.03,
           crossAxisCount: 2),
       itemBuilder: (context, index) {
         return GridCard(

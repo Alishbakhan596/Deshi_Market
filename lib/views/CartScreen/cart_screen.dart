@@ -1,6 +1,7 @@
 import 'package:e_commerce_fruits_app/views/CartScreen/cartListViewBuilderWidgets/cartListViewBuilderWidgets.dart';
 import 'package:e_commerce_fruits_app/widgets/BottomNavigationMenu/bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../../Utils/constants/colors.dart';
@@ -26,11 +27,7 @@ class CartScreen extends StatelessWidget {
                 children: [
                   IconButton(
                       onPressed: () {
-                        // Get.to(() => const BottomNavigationMenu());
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => const BottomNavigationMenu()));
+                        Get.to(() => const BottomNavigationMenu());
                       },
                       icon: const Icon(Icons.arrow_back_ios)),
                   const Text('My Cart',
@@ -81,7 +78,7 @@ class CartScreen extends StatelessWidget {
                   child: SizedBox(
                     child: ElevatedButton(
                         onPressed: () {
-                          //  StripeServices.instance.makePayment();
+                          //StripeServices.instance.makePayment();
                         },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Green,
