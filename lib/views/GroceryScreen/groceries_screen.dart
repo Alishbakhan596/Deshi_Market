@@ -1,4 +1,5 @@
 import 'package:e_commerce_fruits_app/views/Home/home_screen.dart';
+import 'package:e_commerce_fruits_app/widgets/BottomNavigationMenu/bottom_navigation.dart';
 import 'package:e_commerce_fruits_app/widgets/category/categoryGridList.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,6 +23,10 @@ class GroceryScreen extends StatelessWidget {
               IconButton(
                 onPressed: () {
                   Get.to(HomeScreen());
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => BottomNavigationMenu()));
                 },
                 icon: Icon(Icons.arrow_back),
               ),

@@ -18,6 +18,7 @@ class CartListViewBuilderWidgets extends StatelessWidget {
       builder: (context, value, child) {
         if (value.selectedFavourites.isEmpty) {
           return Column(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image(
@@ -33,7 +34,7 @@ class CartListViewBuilderWidgets extends StatelessWidget {
                 "Explore products and shop your",
                 style: TextStyle(fontSize: 20),
               ),
-              SizedBox(width: 20),
+              // SizedBox(width: 5),
               Text(
                 "favourite items",
                 style: TextStyle(

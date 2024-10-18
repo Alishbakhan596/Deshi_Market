@@ -70,7 +70,8 @@ class AccountScreen extends StatelessWidget {
                 children: [
                   Padding(padding: EdgeInsets.only(left: 22)),
                   const Icon(Icons.shopping_bag_outlined),
-                  Padding(padding: EdgeInsets.only(left: 24)),
+                  SizedBox(width: 5),
+                  //Padding(padding: EdgeInsets.only(left: 24)),
                   const Text(
                     "Orders",
                     style: TextStyle(fontSize: 20),
@@ -92,9 +93,10 @@ class AccountScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 2)),
+                  Padding(padding: EdgeInsets.only(left: 1.9)),
                   const Icon(Iconsax.personalcard),
-                  Padding(padding: EdgeInsets.only(left: 0.2)),
+                  //Padding(padding: EdgeInsets.only(left: 0.02)),
+                  SizedBox(),
                   const Text(
                     "My Details",
                     style: TextStyle(fontSize: 20),
@@ -112,7 +114,7 @@ class AccountScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 6)),
+                  Padding(padding: EdgeInsets.only(left: 7.6)),
                   const Icon(Icons.location_on_outlined),
                   Padding(padding: EdgeInsets.only(left: 24)),
                   const Text(
